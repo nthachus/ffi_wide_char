@@ -13,8 +13,5 @@ Metrics/CyclomaticComplexity:
 Style/ExpandPathArguments:
   Enabled: false
 
-Gemspec/RequiredRubyVersion:
-  Enabled: false
-
 Layout/EndOfLine:
   EnforcedStyle: lf

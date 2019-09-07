@@ -57,7 +57,7 @@ module FfiWideChar
   # @param str [String] A Ruby string.
   # @return [String] C native wide-string.
   def self.to_wide_string(str)
-    str ? str.encode(W_CHAR_ENC || DEFAULT_ENC) : nil
+    str&.encode(W_CHAR_ENC || DEFAULT_ENC)
   end
 
   def self.redefine_const(name, value)
