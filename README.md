@@ -1,4 +1,4 @@
-# FfiWideChar
+# FfiWideChar [![Build Status](https://travis-ci.org/nthachus/ffi_wide_char.svg?branch=master)](https://travis-ci.org/nthachus/ffi_wide_char)
 A Ruby gem helper for FFI binding libraries to convert from/to C native `wchar_t` wide-string.
 It provides 2 methods: `read_wide_string` and `to_wide_string` for converting.
 
