@@ -10,6 +10,9 @@ Style/Documentation:
 Metrics/CyclomaticComplexity:
   Max: 8
 
+Metrics/PerceivedComplexity:
+  Max: 8
+
 Style/ExpandPathArguments:
   Enabled: false
 

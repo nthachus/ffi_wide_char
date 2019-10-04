@@ -44,7 +44,7 @@ module FfiWideChar
   # @param ptr [Pointer] A wide-string pointer.
   # @return [String] Decoded wide-string.
   def self.read_wide_string(ptr)
-    return nil unless ptr
+    return nil unless ptr&.respond_to?(:address) && ptr.address.nonzero?
 
     sz = (ptr.size || 0) - W_CHAR_SIZE
     len = 0
