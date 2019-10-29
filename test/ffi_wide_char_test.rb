@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -35,7 +36,7 @@ class FfiWideCharTest < Minitest::Test
 
     out = FfiWideChar.to_wide_string TEST_MSG
     refute_nil out
-    assert_equal msg, out.bytes
+    assert_equal msg, out.each_byte.to_a
   end
 
   def test_4_convert_from_wide_string

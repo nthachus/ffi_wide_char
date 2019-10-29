@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # frozen_string_literal: true
 
 require 'test_helper'
@@ -9,19 +10,19 @@ class UnicodeFileTest < Minitest::Test
 
     begin
       # FILE *_wfopen (const wchar_t *filename, const wchar_t *mode)
-      attach_function :_wfopen, %i[buffer_in buffer_in], :pointer
+      attach_function :_wfopen, [:buffer_in, :buffer_in], :pointer
     rescue FFI::NotFoundError # rubocop:disable Lint/HandleExceptions
     end
 
     # FILE *fopen (const char *filename, const char *mode)
-    attach_function :fopen, %i[string string], :pointer
+    attach_function :fopen, [:string, :string], :pointer
     # int fclose (FILE *stream)
-    attach_function :fclose, %i[pointer], :int
+    attach_function :fclose, [:pointer], :int
 
     # int fputws (const wchar_t *ws, FILE *stream)
-    attach_function :fputws, %i[buffer_in pointer], :int
+    attach_function :fputws, [:buffer_in, :pointer], :int
     # wchar_t *fgetws (wchar_t *ws, int num, FILE *stream)
-    attach_function :fgetws, %i[pointer int pointer], :pointer
+    attach_function :fgetws, [:pointer, :int, :pointer], :pointer
   end
 
   i_suck_and_my_tests_are_order_dependent!

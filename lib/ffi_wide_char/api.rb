@@ -7,6 +7,6 @@ module FfiWideChar
 
     # Converts a string of multibyte characters to a wide character array
     # size_t mbstowcs (wchar_t *wstring, const char *string, size_t size)
-    attach_function :mbstowcs, %i[pointer string size_t], :size_t
+    attach_function :mbstowcs, [:pointer, :string, :size_t], :size_t
   end
 end
