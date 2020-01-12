@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   # Specify which files should be added to the gem when it is released.
   spec.files         = Dir.chdir(File.expand_path('../', __FILE__)) do
-    ['LICENSE.txt'] + Dir.glob('lib/**/*').reject { |f| File.directory? f }
+    %w[LICENSE.txt README.md] + Dir['lib/**/*'].reject { |f| File.directory? f }
   end
   spec.require_paths = ['lib']
 

@@ -1,11 +1,11 @@
 sudo: false
 language: ruby
+bundler_args: --without coverage
 cache: bundler
 rvm:
   - 1.9.3
-  - 2.2
+  - 2.0
   - 2.3
-  - 2.5
+  - ruby
   - jruby
-before_script: bundle exec rubocop
 script: bundle exec rake
